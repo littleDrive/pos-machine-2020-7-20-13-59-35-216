@@ -1,0 +1,12 @@
+P：
+    printReceipt：10min
+    countSameBarcodes: 10min
+    convertBarcodesIntoItems: 10min
+    createReceits(items): 10min
+
+C : 
+    printReceipt : 20min
+    countSameBarcodes: 6min
+    convertBarcodesIntoItems: 8min
+    createReceits(items): 10min
+    
