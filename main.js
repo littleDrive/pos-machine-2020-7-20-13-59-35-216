@@ -46,9 +46,11 @@ function printReceipt(barcodes) {
     let total = 0;
     let receipt = "";
     if (items.length > 0) {
-        for (let i = 0; i < items.length; i++) {
-            total += items[i]['quantity'] * items[i]['price'] ;
-        }
+        // to do
+        // for (let i = 0; i < items.length; i++) {
+        //     total += items[i]['quantity'] * items[i]['price'] ;
+        // }
+        total = getTotal(items);
         receipt = createReceits(items);
     }
 
@@ -59,7 +61,7 @@ function printReceipt(barcodes) {
         + '**********************';
     console.log(output);
 }
-//计算相同商品数量
+
 function countSameBarcodes(barcodes) {
     let newBarcodes={};
     for (let i = 0; i < barcodes.length; i++) {
@@ -84,6 +86,14 @@ function convertBarcodesIntoItems(newBarcodes){
         }
     }
     return items;
+}
+
+function getTotal (items) {
+    let total;
+    for (let i = 0; i < items.length; i++) {
+        total += items[i]['quantity'] * items[i]['price'] ;
+    }
+    return total;
 }
 
 function createReceits(items) {
